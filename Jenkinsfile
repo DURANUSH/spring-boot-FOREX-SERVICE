@@ -8,14 +8,21 @@ pipeline {
                 bat 'mvn compile'
             }
         }
+        stage('Test') {
+            steps {
+                echo 'Test'
 
+            }
+        }
         stage('Package') {
             steps {
                 echo 'Package'
                 bat 'mvn package'
             }
             post {
+                 always {
 
+              }
                 success {
                           archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
                 }
