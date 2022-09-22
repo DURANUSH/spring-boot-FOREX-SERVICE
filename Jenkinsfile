@@ -20,9 +20,7 @@ pipeline {
                 bat 'mvn package'
             }
             post {
-                 always {
 
-              }
                 success {
                           archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
                 }
