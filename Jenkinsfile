@@ -14,6 +14,7 @@ pipeline {
                 echo 'Package'
                 bat 'mvn package'
             }
+            post {
 
                 success {
                           archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
