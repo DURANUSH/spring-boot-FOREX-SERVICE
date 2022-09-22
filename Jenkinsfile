@@ -14,10 +14,7 @@ pipeline {
                 echo 'Package'
                 bat 'mvn package'
             }
-            post {
-                 always {
-                junit 'target/surefire-reports/*.xml'
-              }
+
                 success {
                           archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
                 }
